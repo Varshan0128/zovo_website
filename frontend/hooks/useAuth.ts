@@ -3,11 +3,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { api } from '@/lib/api';
+import { AdminUser } from '@/types';
 
 export function useAuth(requireAuth: boolean = false) {
   const router = useRouter();
   const [token, setToken] = useState<string | null>(null);
-  const [user, setUser] = useState<{ email: string; full_name?: string } | null>(null);
+  const [user, setUser] = useState<AdminUser | null>(null);
   const [loading, setLoading] = useState(true);
 
   const checkAuth = useCallback(async () => {

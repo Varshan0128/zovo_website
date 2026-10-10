@@ -2,7 +2,8 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, MessageCircle, Mail } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/brand/WhatsAppIcon';
 import { analytics } from '@/lib/analytics';
 import { SlideUp } from '@/components/ui/Motion';
 
@@ -53,7 +54,7 @@ export const CTASection: React.FC = () => {
                   onClick={() => analytics.trackEvent('whatsapp_click', { location: 'cta_section' })}
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#FFFFFF] border border-[#CBD5E1] px-6 py-3.5 text-sm font-semibold text-[#14171F] hover:bg-[#F4F6FA] hover:-translate-y-0.5 transition-all"
                 >
-                  <MessageCircle size={16} className="text-[#25D366]" />
+                  <WhatsAppIcon size={18} variant="color" />
                   <span>WhatsApp ZOVO</span>
                 </a>
               </div>
@@ -68,7 +69,7 @@ export const CTASection: React.FC = () => {
                 </a>
                 <span className="hidden sm:inline text-[#CBD5E1]">•</span>
                 <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-[#25D366] transition-colors">
-                  <MessageCircle size={14} className="text-[#25D366]" />
+                  <WhatsAppIcon size={15} variant="color" />
                   <span>{whatsappNumber}</span>
                 </a>
               </div>

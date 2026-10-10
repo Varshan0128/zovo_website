@@ -5,6 +5,7 @@ from app.models.project import Project, ProjectImage
 from app.models.service import Service
 from app.models.setting import SiteSetting
 from app.models.audit import AuditLog
+from app.models.portfolio_lead import PortfolioLead
 
 __all__ = [
     "Base",
@@ -15,4 +16,5 @@ __all__ = [
     "Service",
     "SiteSetting",
     "AuditLog",
+    "PortfolioLead",
 ]

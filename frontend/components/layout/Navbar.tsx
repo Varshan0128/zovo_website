@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ZovoLogo } from '@/components/brand/ZovoLogo';
+import { WhatsAppIcon } from '@/components/brand/WhatsAppIcon';
 import { Menu, X, ArrowRight, ChevronDown } from 'lucide-react';
 import { analytics } from '@/lib/analytics';
 
@@ -17,9 +18,9 @@ const navLinks = [
       { name: 'UI / UX Design', href: '/services/ui-ux', desc: 'Interfaces that are clear, useful and memorable' },
       { name: 'AI Solutions', href: '/services/ai-solutions', desc: 'Practical AI systems built around real workflows' },
       { name: 'Automation', href: '/services/automation', desc: 'Connect repetitive processes and reduce manual work' },
-      { name: 'Digital Career Solutions', href: '/services/resume-portfolio', desc: 'Professional resume and portfolio experiences' },
     ],
   },
+  { name: 'Portfolio', href: '/portfolio' },
   { name: 'Work', href: '/work' },
   { name: 'About', href: '/about' },
   { name: 'Contact', href: '/contact' },
@@ -143,11 +144,31 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Desktop Right CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2.5">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center gap-1.5 rounded-[8px] bg-[#14171F] hover:bg-[#1F5BFF] text-white px-3.5 py-2 text-xs font-semibold shadow-xs hover:-translate-y-0.5 transition-all duration-200 group"
+            >
+              <span className="flex h-1.5 w-1.5 rounded-full bg-[#FF6B3D] group-hover:scale-125 transition-transform" />
+              <span>Portfolio Users</span>
+            </Link>
+
+            <a
+              href="https://wa.me/917603865862?text=Hi%20ZOVO%2C%20I%20would%20like%20to%20discuss%20a%20digital%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => analytics.trackEvent('whatsapp_click', { location: 'navbar' })}
+              className="inline-flex items-center justify-center gap-1.5 rounded-[8px] bg-emerald-50 hover:bg-[#25D366] text-[#14171F] hover:text-white border border-emerald-200/80 px-3 py-2 text-xs font-semibold transition-all duration-200 group"
+              aria-label="Chat on WhatsApp"
+            >
+              <WhatsAppIcon size={17} variant="color" className="group-hover:scale-105 transition-transform" />
+              <span className="hidden xl:inline text-xs font-medium">WhatsApp</span>
+            </a>
+
             <Link
               href="/contact"
               onClick={handleCtaClick}
-              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#1F5BFF] px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#1347D8] hover:-translate-y-0.5 transition-all duration-200"
+              className="inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#1F5BFF] px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-sm hover:bg-[#1347D8] hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Start a Project</span>
               <ArrowRight size={14} />
@@ -155,13 +176,31 @@ export const Navbar: React.FC = () => {
           </div>
 
           {/* Mobile Toggle & CTA */}
-          <div className="flex md:hidden items-center gap-2.5">
+          <div className="flex md:hidden items-center gap-2">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center justify-center rounded-[8px] bg-[#14171F] px-2.5 py-1.5 text-xs font-semibold text-white"
+            >
+              Portfolio
+            </Link>
+
+            <a
+              href="https://wa.me/917603865862?text=Hi%20ZOVO%2C%20I%20would%20like%20to%20discuss%20a%20digital%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => analytics.trackEvent('whatsapp_click', { location: 'navbar_mobile_icon' })}
+              aria-label="Chat on WhatsApp"
+              className="p-1.5 rounded-[8px] bg-emerald-50 border border-emerald-100 flex items-center justify-center"
+            >
+              <WhatsAppIcon size={18} variant="color" />
+            </a>
+
             <Link
               href="/contact"
               onClick={handleCtaClick}
-              className="inline-flex items-center justify-center rounded-[8px] bg-[#1F5BFF] px-3.5 py-1.5 text-xs font-semibold text-white"
+              className="inline-flex items-center justify-center rounded-[8px] bg-[#1F5BFF] px-3 py-1.5 text-xs font-semibold text-white"
             >
-              Start a Project
+              Start
             </Link>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -215,7 +254,7 @@ export const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          <div className="pt-3 border-t border-[#E2E6EF]">
+          <div className="pt-3 border-t border-[#E2E6EF] space-y-2">
             <Link
               href="/contact"
               onClick={handleCtaClick}
@@ -224,6 +263,16 @@ export const Navbar: React.FC = () => {
               <span>Start a Project</span>
               <ArrowRight size={15} />
             </Link>
+            <a
+              href="https://wa.me/917603865862?text=Hi%20ZOVO%2C%20I%20would%20like%20to%20discuss%20a%20digital%20project."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => analytics.trackEvent('whatsapp_click', { location: 'navbar_mobile_drawer' })}
+              className="flex w-full items-center justify-center gap-2 rounded-[8px] bg-emerald-50 border border-emerald-200/80 py-2.5 text-sm font-semibold text-[#14171F] hover:bg-[#25D366] hover:text-white transition-colors"
+            >
+              <WhatsAppIcon size={18} variant="color" />
+              <span>Chat on WhatsApp</span>
+            </a>
           </div>
         </div>
       )}

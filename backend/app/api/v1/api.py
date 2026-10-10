@@ -4,6 +4,7 @@ from app.api.v1.endpoints import (
     services,
     projects,
     settings,
+    portfolio_leads,
     admin_auth,
     admin_enquiries,
     admin_projects,
@@ -19,6 +20,7 @@ api_router.include_router(contact.router, tags=["Contact"])
 api_router.include_router(services.router, tags=["Services"])
 api_router.include_router(projects.router, tags=["Projects"])
 api_router.include_router(settings.router, tags=["Settings"])
+api_router.include_router(portfolio_leads.router, tags=["Portfolio Leads"])
 
 # Admin Endpoints
 api_router.include_router(admin_auth.router, tags=["Admin Auth"])

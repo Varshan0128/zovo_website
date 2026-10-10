@@ -3,7 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 import { ZovoLogo } from '@/components/brand/ZovoLogo';
-import { Mail, MessageCircle, ArrowUpRight } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/brand/WhatsAppIcon';
+import { Mail, ArrowUpRight } from 'lucide-react';
 
 const navLinks = [
   { name: 'Services', href: '/services' },
@@ -60,7 +61,7 @@ export const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-[#F4F6FA] hover:text-[#25D366] transition-colors"
               >
-                <MessageCircle size={14} className="text-[#25D366]" />
+                <WhatsAppIcon size={16} variant="color" className="shrink-0" />
                 <span>WhatsApp: {whatsappNumber}</span>
               </a>
             </div>

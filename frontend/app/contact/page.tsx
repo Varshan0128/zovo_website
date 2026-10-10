@@ -2,7 +2,8 @@ import React from 'react';
 import type { Metadata } from 'next';
 import { SiteShell } from '@/components/layout/SiteShell';
 import { ContactForm } from '@/components/contact/ContactForm';
-import { Mail, MessageCircle, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/brand/WhatsAppIcon';
+import { Mail, Clock, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Have Something in Mind? — Contact ZOVO',
@@ -60,8 +61,8 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="rounded-xl bg-[#FFFFFF] border border-[#E2E6EF] p-5 flex items-center gap-4 hover:border-[#25D366] hover:shadow-xs transition-all duration-200 group block"
                 >
-                  <div className="flex h-11 w-11 items-center justify-center rounded-[8px] bg-emerald-50 text-[#25D366] border border-emerald-100 group-hover:bg-[#25D366] group-hover:text-white transition-colors shrink-0">
-                    <MessageCircle size={18} />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[10px] bg-emerald-50 border border-emerald-100 group-hover:bg-[#25D366]/10 transition-colors shrink-0">
+                    <WhatsAppIcon size={24} variant="color" className="group-hover:scale-110 transition-transform" />
                   </div>
                   <div className="flex-1">
                     <div className="text-[11px] font-mono uppercase tracking-wider text-[#5A6578]">WhatsApp Studio</div>

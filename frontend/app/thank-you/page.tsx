@@ -4,7 +4,8 @@ import React, { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { SiteShell } from '@/components/layout/SiteShell';
-import { CheckCircle2, Home, MessageCircle } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/brand/WhatsAppIcon';
+import { CheckCircle2, Home } from 'lucide-react';
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
@@ -69,7 +70,7 @@ function ThankYouContent() {
               rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-[8px] bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-xs hover:bg-[#20ba59] transition-colors"
             >
-              <MessageCircle size={15} />
+              <WhatsAppIcon size={18} variant="white" />
               <span>WhatsApp ZOVO</span>
             </a>
           </div>
